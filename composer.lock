@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "be4d5d3f734b4709a972fa60c3d6f2ce",
+    "content-hash": "9af46a7beb38462539a451b58dcf3d96",
     "packages": [
         {
             "name": "brick/math",
@@ -726,6 +726,119 @@
             "time": "2021-04-12T15:11:14+00:00"
         },
         {
+            "name": "friendsofsymfony1/doctrine1",
+            "version": "v1.3.8",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony1/doctrine1.git",
+                "reference": "3ef85915e56b29475e9bff85bfc1f80d41028a7f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony1/doctrine1/zipball/3ef85915e56b29475e9bff85bfc1f80d41028a7f",
+                "reference": "3ef85915e56b29475e9bff85bfc1f80d41028a7f",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "ext-pdo": "*",
+                "php": ">=5.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Doctrine_": "lib/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "LGPL-2.1-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Konsta Vesterinen",
+                    "email": "kvesteri@cc.hut.fi"
+                },
+                {
+                    "name": "Jonathan Wage",
+                    "email": "jonwage@gmail.com"
+                },
+                {
+                    "name": "Doctrine1 Contributors",
+                    "homepage": "https://github.com/FriendsOfSymfony1/doctrine1/graphs/contributors"
+                }
+            ],
+            "description": "PHP Database ORM for Symfony1. Do NOT use for new projects: please move to a newest Symfony release and Doctrine2",
+            "homepage": "http://www.doctrine-project.org",
+            "keywords": [
+                "database",
+                "doctrine1",
+                "orm",
+                "symfony1"
+            ],
+            "support": {
+                "issues": "https://github.com/FriendsOfSymfony1/doctrine1/issues",
+                "source": "https://github.com/FriendsOfSymfony1/doctrine1"
+            },
+            "time": "2020-07-10T03:00:50+00:00"
+        },
+        {
+            "name": "friendsofsymfony1/symfony1",
+            "version": "v1.5.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/FriendsOfSymfony1/symfony1.git",
+                "reference": "28fa68237e2ed4aa25eba8c453884b0a681c4ce2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/FriendsOfSymfony1/symfony1/zipball/28fa68237e2ed4aa25eba8c453884b0a681c4ce2",
+                "reference": "28fa68237e2ed4aa25eba8c453884b0a681c4ce2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0",
+                "swiftmailer/swiftmailer": "~5.2"
+            },
+            "require-dev": {
+                "psr/log": "*"
+            },
+            "suggest": {
+                "friendsofsymfony1/doctrine1": "Doctrine plugin",
+                "propel/sf-propel-o-r-m-plugin": "Propel plugin",
+                "psr/log": "Psr logger"
+            },
+            "bin": [
+                "data/bin/symfony"
+            ],
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "autoload.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "Fork of symfony 1.4 with dic, form enhancements, latest swiftmailer and better performance",
+            "support": {
+                "issues": "https://github.com/FriendsOfSymfony1/symfony1/issues",
+                "source": "https://github.com/FriendsOfSymfony1/symfony1/tree/master"
+            },
+            "time": "2020-06-08T13:48:13+00:00"
+        },
+        {
             "name": "phpstan/phpdoc-parser",
             "version": "0.5.4",
             "source": {
@@ -891,6 +1004,64 @@
                 "wiki": "https://github.com/squizlabs/PHP_CodeSniffer/wiki"
             },
             "time": "2021-04-09T00:54:41+00:00"
+        },
+        {
+            "name": "swiftmailer/swiftmailer",
+            "version": "v5.4.12",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/swiftmailer/swiftmailer.git",
+                "reference": "181b89f18a90f8925ef805f950d47a7190e9b950"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/swiftmailer/swiftmailer/zipball/181b89f18a90f8925ef805f950d47a7190e9b950",
+                "reference": "181b89f18a90f8925ef805f950d47a7190e9b950",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "mockery/mockery": "~0.9.1",
+                "symfony/phpunit-bridge": "~3.2"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.4-dev"
+                }
+            },
+            "autoload": {
+                "files": [
+                    "lib/swift_required.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Chris Corbyn"
+                },
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com"
+                }
+            ],
+            "description": "Swiftmailer, free feature-rich PHP mailer",
+            "homepage": "https://swiftmailer.symfony.com",
+            "keywords": [
+                "email",
+                "mail",
+                "mailer"
+            ],
+            "support": {
+                "issues": "https://github.com/swiftmailer/swiftmailer/issues",
+                "source": "https://github.com/swiftmailer/swiftmailer/tree/v5.4.12"
+            },
+            "time": "2018-07-31T09:26:32+00:00"
         }
     ],
     "aliases": [],
