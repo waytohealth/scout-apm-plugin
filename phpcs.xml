@@ -13,6 +13,20 @@
     <file>config</file>
     <file>lib</file>
 
+    <rule ref="PSR2">
+        <!-- Symfony doesn't use namespaces, so ignore this -->
+        <exclude name="PSR1.Classes.ClassDeclaration.MissingNamespace" />
+    </rule>
+
+    <!-- The plugin configuration file is non-pascal-case, and ends in .class.php -->
+    <rule ref="Squiz.Classes.ValidClassName.NotCamelCaps">
+        <exclude-pattern>config/*</exclude-pattern>
+    </rule>
+    <rule ref="Squiz.Classes.ClassFileName.NoMatch">
+        <exclude-pattern>config/*</exclude-pattern>
+    </rule>
+
+
     <rule ref="Doctrine">
         <exclude name="Generic.Files.LineLength.TooLong"/>
     </rule>
