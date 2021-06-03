@@ -51,7 +51,7 @@ class ScoutApmRequestListener
         $foo = [
             'uri'       => $sfRequest->getUri(),
             'method'    => $sfRequest->getMethod(),
-            'requestId' => frontendConfiguration::$requestId,
+            // 'requestId' => frontendConfiguration::$requestId,
         ];
     }
 

@@ -31,7 +31,7 @@ class scoutApmPluginConfiguration extends sfPluginConfiguration
         return $agent;
     }
 
-    public function initialize(): void
+    public function initialize()
     {
         $this->agent = $this->createAgent();
 
@@ -73,5 +73,7 @@ class scoutApmPluginConfiguration extends sfPluginConfiguration
 
         $requestListener = new ScoutApmRequestListener($this->agent);
         $requestListener->connect($this->dispatcher);
+
+        return true;
     }
 }
