@@ -19,12 +19,12 @@ class ScoutApmDoctrineListener extends Doctrine_EventListener
 
     public function preFetch(Doctrine_Event $event): void
     {
-        $this->startQuery('SQL/query', $event->getQuery());
+        $this->startQuery('SQL/Query', $event->getQuery());
     }
 
     public function preStmtExecute(Doctrine_Event $event): void
     {
-        $this->startQuery('SQL/query', $event->getQuery());
+        $this->startQuery('SQL/Query', $event->getQuery());
     }
 
     public function postFetch(Doctrine_Event $event): void
