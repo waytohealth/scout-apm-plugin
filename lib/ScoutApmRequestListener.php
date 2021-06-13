@@ -46,13 +46,6 @@ class ScoutApmRequestListener
             $sfRequest->getParameter('module'), // could also be $event['module']
             $sfRequest->getParameter('action')  // could also be $event['action']
         ));
-
-        // TODO are these useful?
-        $foo = [
-            'uri'       => $sfRequest->getUri(),
-            'method'    => $sfRequest->getMethod(),
-            // 'requestId' => frontendConfiguration::$requestId,
-        ];
     }
 
     /**
