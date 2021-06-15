@@ -18,7 +18,7 @@ class scoutApmPluginConfiguration extends sfPluginConfiguration
     /** @var ScoutApmAgent|null */
     private static $agent;
 
-    private function getAgentInstance(): ScoutApmAgent
+    public function getAgentInstance(): ScoutApmAgent
     {
         if (self::$agent) {
             return self::$agent;
