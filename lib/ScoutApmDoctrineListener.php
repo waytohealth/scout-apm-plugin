@@ -17,6 +17,19 @@ class ScoutApmDoctrineListener extends Doctrine_EventListener
         $this->agent = $agent;
     }
 
+    public function connect(sfEventDispatcher $dispatcher): void
+    {
+        $dispatcher->connect('doctrine.configure_connection', [$this, 'onConfigureConnection']);
+    }
+
+    public function onConfigureConnection(sfEvent $event): void
+    {
+        $connection = $event['connection'];
+        assert($connection instanceof Doctrine_Connection);
+
+        $connection->addListener($this, 'scout_apm_profiler');
+    }
+
     public function preFetch(Doctrine_Event $event): void
     {
         $this->startQuery('SQL/Query', $event->getQuery());

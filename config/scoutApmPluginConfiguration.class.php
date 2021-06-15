@@ -38,17 +38,8 @@ class scoutApmPluginConfiguration extends sfPluginConfiguration
     {
         $agent = $this->getAgentInstance();
 
-        $this->dispatcher->connect(
-            'doctrine.configure_connection',
-            function (sfEvent $event) use ($agent): void {
-                $connection = $event['connection'];
-                assert($connection instanceof Doctrine_Connection);
-
-                $profiler = new ScoutApmDoctrineListener($agent);
-
-                $connection->addListener($profiler, 'scout_apm_profiler');
-            }
-        );
+        $doctrineListener = new ScoutApmDoctrineListener($agent);
+        $doctrineListener->connect($this->dispatcher);
 
         $taskListener = new ScoutApmTaskListener($agent);
         $taskListener->connect($this->dispatcher);
