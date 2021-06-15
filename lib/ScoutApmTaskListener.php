@@ -1,5 +1,6 @@
 <?php
 
+declare(strict_types=1);
 
 use Scoutapm\Events\Span\SpanReference;
 use Scoutapm\ScoutApmAgent;
@@ -30,7 +31,7 @@ class ScoutApmTaskListener
             SpanReference::INSTRUMENT_JOB,
             get_class($event->getSubject())
         ));
-        if (!$this->currentSpan) {
+        if (! $this->currentSpan) {
             return;
         }
 
