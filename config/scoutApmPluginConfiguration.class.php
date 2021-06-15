@@ -5,7 +5,6 @@ declare(strict_types=1);
 use Psr\Log\NullLogger;
 use Scoutapm\Agent;
 use Scoutapm\Config;
-use Scoutapm\Events\Span\SpanReference;
 use Scoutapm\ScoutApmAgent;
 
 /**
@@ -16,41 +15,45 @@ use Scoutapm\ScoutApmAgent;
  */
 class scoutApmPluginConfiguration extends sfPluginConfiguration
 {
-    /** @var ScoutApmAgent */
-    private $agent;
+    /** @var ScoutApmAgent|null */
+    private static $agent;
 
-    private function createAgent(): Agent
+    private function getAgentInstance(): ScoutApmAgent
     {
-        $agent = Agent::fromConfig(
+        if (self::$agent) {
+            return self::$agent;
+        }
+
+        self::$agent = Agent::fromConfig(
             new Config(), // use environment variables
             new NullLogger() // TODO figure out a PSR-3 logger other than this
         );
         // If the core agent is not already running, this will download and run it (from /tmp by default)
-        $agent->connect();
+        self::$agent->connect();
 
-        return $agent;
+        return self::$agent;
     }
 
     public function initialize()
     {
-        $this->agent = $this->createAgent();
+        $agent = $this->getAgentInstance();
 
         $this->dispatcher->connect(
             'doctrine.configure_connection',
-            function (sfEvent $event): void {
+            function (sfEvent $event) use ($agent): void {
                 $connection = $event['connection'];
                 assert($connection instanceof Doctrine_Connection);
 
-                $profiler = new ScoutApmDoctrineListener($this->agent);
+                $profiler = new ScoutApmDoctrineListener($agent);
 
                 $connection->addListener($profiler, 'scout_apm_profiler');
             }
         );
 
-        $taskListener = new ScoutApmTaskListener($this->agent);
+        $taskListener = new ScoutApmTaskListener($agent);
         $taskListener->connect($this->dispatcher);
 
-        $requestListener = new ScoutApmRequestListener($this->agent);
+        $requestListener = new ScoutApmRequestListener($agent);
         $requestListener->connect($this->dispatcher);
 
         return true;
