@@ -46,30 +46,9 @@ class scoutApmPluginConfiguration extends sfPluginConfiguration
                 $connection->addListener($profiler, 'scout_apm_profiler');
             }
         );
-        $this->dispatcher->connect(
-            'command.pre_command',
-            function (sfEvent $event): void {
-                $span = $this->agent->startSpan(
-                    sprintf(
-                        '%s/%s',
-                        SpanReference::INSTRUMENT_JOB,
-                        get_class($event->getSubject())
-                    )
-                );
-                if (! $span) {
-                    return;
-                }
 
-                $span->tag('command.parameters', $event->getParameters());
-            }
-        );
-        $this->dispatcher->connect(
-            'command.post_command',
-            function (sfEvent $event): void {
-                $this->agent->stopSpan();
-                $this->agent->send();
-            }
-        );
+        $taskListener = new ScoutApmTaskListener($this->agent);
+        $taskListener->connect($this->dispatcher);
 
         $requestListener = new ScoutApmRequestListener($this->agent);
         $requestListener->connect($this->dispatcher);
