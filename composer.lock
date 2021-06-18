@@ -378,16 +378,16 @@
         },
         {
             "name": "scoutapp/scout-apm-php",
-            "version": "v6.1.0",
+            "version": "v6.3.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scoutapp/scout-apm-php.git",
-                "reference": "95ba8d05dbf0864aa07a0d41ddad4acdd1f70d77"
+                "reference": "6fd2569b5778c7f0e73eca7caeb53958e7e05896"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scoutapp/scout-apm-php/zipball/95ba8d05dbf0864aa07a0d41ddad4acdd1f70d77",
-                "reference": "95ba8d05dbf0864aa07a0d41ddad4acdd1f70d77",
+                "url": "https://api.github.com/repos/scoutapp/scout-apm-php/zipball/6fd2569b5778c7f0e73eca7caeb53958e7e05896",
+                "reference": "6fd2569b5778c7f0e73eca7caeb53958e7e05896",
                 "shasum": ""
             },
             "require": {
@@ -422,6 +422,7 @@
             },
             "suggest": {
                 "composer-runtime-api": "Composer v2 is required for seeing version information in metadata",
+                "ext-mongodb": "Required for instrumentation of MongoDB",
                 "ext-scoutapm": "Recommended for additional recording capability of IO-bound PHP internal functions"
             },
             "type": "library",
@@ -457,9 +458,9 @@
             ],
             "support": {
                 "issues": "https://github.com/scoutapp/scout-apm-php/issues",
-                "source": "https://github.com/scoutapp/scout-apm-php/tree/v6.1.0"
+                "source": "https://github.com/scoutapp/scout-apm-php/tree/v6.3.0"
             },
-            "time": "2021-04-12T08:40:07+00:00"
+            "time": "2021-06-17T16:47:00+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
@@ -1131,5 +1132,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }
