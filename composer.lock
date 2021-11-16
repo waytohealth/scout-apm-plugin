@@ -390,16 +390,16 @@
         },
         {
             "name": "scoutapp/scout-apm-php",
-            "version": "v6.5.0",
+            "version": "v6.6.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/scoutapp/scout-apm-php.git",
-                "reference": "c67d5f160d8f9d2029342e706193ea6aad4d3074"
+                "reference": "2b1fa2545c73d945df0dcf3a1633878b940766c9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/scoutapp/scout-apm-php/zipball/c67d5f160d8f9d2029342e706193ea6aad4d3074",
-                "reference": "c67d5f160d8f9d2029342e706193ea6aad4d3074",
+                "url": "https://api.github.com/repos/scoutapp/scout-apm-php/zipball/2b1fa2545c73d945df0dcf3a1633878b940766c9",
+                "reference": "2b1fa2545c73d945df0dcf3a1633878b940766c9",
                 "shasum": ""
             },
             "require": {
@@ -469,9 +469,9 @@
             ],
             "support": {
                 "issues": "https://github.com/scoutapp/scout-apm-php/issues",
-                "source": "https://github.com/scoutapp/scout-apm-php/tree/v6.5.0"
+                "source": "https://github.com/scoutapp/scout-apm-php/tree/v6.6.0"
             },
-            "time": "2021-10-28T08:35:15+00:00"
+            "time": "2021-11-15T10:05:25+00:00"
         },
         {
             "name": "symfony/polyfill-ctype",
