@@ -3,7 +3,7 @@
     "description": "symfony1 plugin for Scout APM",
     "type": "symfony1-plugin",
     "require": {
-        "scoutapp/scout-apm-php": "^6.1"
+        "scoutapp/scout-apm-php": "^8.0"
     },
     "license": "MIT",
     "authors": [
