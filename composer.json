@@ -13,7 +13,7 @@
         }
     ],
     "require-dev": {
-        "doctrine/coding-standard": "^9.0",
+        "doctrine/coding-standard": "^11.0",
         "friendsofsymfony1/symfony1": "^1.5",
         "friendsofsymfony1/doctrine1": "^1.3",
         "phpstan/phpstan": "^1.0.1"
