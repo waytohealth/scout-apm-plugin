@@ -901,21 +901,22 @@
         },
         {
             "name": "friendsofsymfony1/doctrine1",
-            "version": "v1.3.8",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/FriendsOfSymfony1/doctrine1.git",
-                "reference": "3ef85915e56b29475e9bff85bfc1f80d41028a7f"
+                "reference": "46257508243e038b7faf9f0620b603828e9e2b3c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/FriendsOfSymfony1/doctrine1/zipball/3ef85915e56b29475e9bff85bfc1f80d41028a7f",
-                "reference": "3ef85915e56b29475e9bff85bfc1f80d41028a7f",
+                "url": "https://api.github.com/repos/FriendsOfSymfony1/doctrine1/zipball/46257508243e038b7faf9f0620b603828e9e2b3c",
+                "reference": "46257508243e038b7faf9f0620b603828e9e2b3c",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
                 "ext-pdo": "*",
+                "ext-zlib": "*",
                 "php": ">=5.3"
             },
             "type": "library",
@@ -959,7 +960,7 @@
                 "issues": "https://github.com/FriendsOfSymfony1/doctrine1/issues",
                 "source": "https://github.com/FriendsOfSymfony1/doctrine1"
             },
-            "time": "2020-07-10T03:00:50+00:00"
+            "time": "2023-02-13T17:06:39+00:00"
         },
         {
             "name": "friendsofsymfony1/symfony1",
@@ -1309,5 +1310,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.3.0"
 }
